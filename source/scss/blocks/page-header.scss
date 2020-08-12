@@ -215,7 +215,7 @@
             width: 0;
             height: 2px;
             background-color: $c-light;
-            left: 0;
+            right: 0;
             transition: width 0.5s ease;
             @media (max-width: $tablet) and (orientation: portrait) {
                 left: 0;
@@ -229,8 +229,15 @@
             }
         }
         &.active {
+            color: $c-purple;
             &::after {
+                right: auto;
+                left: 0;
                 display: block;
+                width: 100%;
+                opacity: 1;
+                background-color: #a67ee5;
+                transition: width 0.5s ease;
             }
         }
         &:hover,
@@ -238,6 +245,8 @@
             color: $c-purple;
             outline: none;
             &::after {
+                right: auto;
+                left: 0;
                 width: 100%;
                 opacity: 1;
                 background-color: $c-purple;

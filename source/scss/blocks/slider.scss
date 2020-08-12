@@ -110,15 +110,15 @@
 
 .swiper-slide-active {
     .slider__item-text {
-        animation: fadeInTextLeft 1.7s;
+        animation: fadeInTextLeft 1s;
         @keyframes fadeInTextLeft {
             from {
                 opacity: 0;
-                transform: translateY(500%);
+                transform: translateX(20rem);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
     }
@@ -126,19 +126,19 @@
 
 .swiper-slide-next {
     .slider__item-text {
-        animation: fadeInTextRight 2.5s;
+        animation: fadeInTextRight 1s;
         @keyframes fadeInTextRight {
             0% {
                 opacity: 0;
-                transform: translateY(500%);
+                transform: translateX(20rem);
             }
             30% {
                 opacity: 0;
-                transform: translateY(500%);
+                transform: translateX(20rem);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
     }
