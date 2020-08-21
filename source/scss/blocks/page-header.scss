@@ -28,10 +28,13 @@
     position: relative;
     flex: none;
     top: -0.5rem;
+    left: -1rem;
     display: block;
     padding: 1rem 0;
     width: 10rem;
     color: $c-light;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(.49,.8,.81,.53), left 0.3s cubic-bezier(.49,.8,.81,.53);
     @media (min-width: $stop-scaling) {
         top: -5px;
         padding: 10px 0;
@@ -157,6 +160,8 @@
     font-size: 1.2rem;
     line-height: 1.0418;
     color: $c-light;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(.49,.8,.81,.53);
     @media (min-width: $stop-scaling) {
         font-size: 12px;
     }
@@ -216,7 +221,7 @@
             height: 2px;
             background-color: $c-light;
             right: 0;
-            transition: width 0.5s ease;
+            transition: width 0.3s ease;
             @media (max-width: $tablet) and (orientation: portrait) {
                 left: 0;
                 right: 0;
@@ -229,15 +234,14 @@
             }
         }
         &.active {
-            color: $c-purple;
             &::after {
                 right: auto;
                 left: 0;
                 display: block;
-                width: 100%;
-                opacity: 1;
-                background-color: #a67ee5;
-                transition: width 0.5s ease;
+                width: 0;
+                opacity: 0;
+                background-color: #fff;
+                transition: width 0.3s ease 0.3s;
             }
         }
         &:hover,
@@ -250,7 +254,6 @@
                 width: 100%;
                 opacity: 1;
                 background-color: $c-purple;
-                transition: width 0.5s ease;
             }
         }
     }
@@ -268,5 +271,24 @@
     @media (max-width: $mobile) and (orientation: landscape) {
         margin-left: 0;
         width: 100%;
+    }
+}
+
+.load-page {
+    .page-header__logo {
+        left: 0;
+        opacity: 1;
+    }
+    .page-header__menu {
+        opacity: 1;
+        a {
+            &.active {
+                &::after {
+                    width: 100%;
+                    opacity: 1;
+                    transition: width 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+                }
+            }
+        }
     }
 }

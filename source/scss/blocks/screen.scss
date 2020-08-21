@@ -46,6 +46,9 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.2s cubic-bezier(.49,.8,.81,.53), transform 0.2s cubic-bezier(.49,.8,.81,.53);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -353,4 +356,11 @@
 
 .screen--rules {
   background-color: $c-dark;
+}
+
+.load-page {
+  .screen__footer {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

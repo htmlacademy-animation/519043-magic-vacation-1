@@ -80,13 +80,17 @@
     text-transform: uppercase;
     font-size: 2.4rem;
     line-height: 1.27;
-    animation: fadeinIntro 0.9s;
+    animation: fadeinIntro 1.4s;
     @keyframes fadeinIntro {
-        from {
+        0% {
             opacity: 0;
-            transform: translateY(70px);
+            transform: translateY(5rem);
         }
-        to {
+        50% {
+            opacity: 0;
+            transform: translateY(5rem);
+        }
+        100% {
             opacity: 1;
             transform: translateY(0);
         }
