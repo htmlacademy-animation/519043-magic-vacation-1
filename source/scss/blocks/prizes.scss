@@ -330,3 +330,24 @@
     }
   }
 }
+.animate-bg {
+  background: #5f458c;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+}
+.screen--prizes.active .animate-bg {
+  animation: fadeInBg 1s ease;
+  @keyframes fadeInBg {
+    0% {
+      z-index: 1;
+      height: 0;
+    }
+    100% {
+      z-index: 1;
+      height: 100%;
+    }
+  }
+}
