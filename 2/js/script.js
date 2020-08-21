@@ -10625,9 +10625,9 @@ const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8_
 fullPageScroll.init();
 
 window.onload = function() {
-    var body = document.getElementsByTagName("body");
-    body[0].classList.add("load-page");
- };
+    const { body } = document;
+    body.classList.add("load-page");
+};
 
 /***/ }),
 
