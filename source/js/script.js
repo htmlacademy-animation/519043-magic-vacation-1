@@ -23,6 +23,6 @@ const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
 window.onload = function() {
-    var body = document.getElementsByTagName("body");
-    body[0].classList.add("load-page");
- };
+    const { body } = document;
+    body.classList.add("load-page");
+};
