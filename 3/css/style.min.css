@@ -2197,15 +2197,15 @@ img {
   bottom: 0;
   height: 0; }
 
-.screen--prizes.active .animate-bg {
-  animation: fadeInBg 1s ease; }
+.animate-bg.active {
+  animation: fadeInBg 0.5s ease; }
 
 @keyframes fadeInBg {
   0% {
     z-index: 1;
     height: 0; }
   100% {
-    z-index: 1;
+    z-index: 99;
     height: 100%; } }
 
 .result {
