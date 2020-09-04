@@ -23,14 +23,30 @@ export default class FullPageScroll {
     const currentPosition = this.activeScreen;
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
-      this.changePageDisplay();
+      setTimeout(() => {
+        this.changePageDisplay();
+      }, 500)
+    }
+    if (currentPosition === 1) {
+      document.querySelector('.animate-bg').classList.add('active');
+    } else {
+      document.querySelector('.animate-bg').classList.remove('active');
     }
   }
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+    
+    setTimeout(() => {
+      this.changePageDisplay();
+    }, 500)
+
+    if ((location.hash.slice(1) === 'prizes')) {
+      document.querySelector('.animate-bg').classList.add('active');
+    } else {
+      document.querySelector('.animate-bg').classList.remove('active');
+    }
   }
 
   changePageDisplay() {
