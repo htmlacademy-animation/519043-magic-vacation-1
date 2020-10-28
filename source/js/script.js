@@ -19,7 +19,6 @@ result();
 form();
 social();
 
-const animated = document.querySelector('.rules__item:nth-child(4) p');
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
@@ -27,8 +26,3 @@ window.onload = function() {
     const { body } = document;
     body.classList.add("load-page");
 };
-
-animated.addEventListener('animationend', () => {
-    const drove = document.getElementsByClassName("rules__link")[0];
-    drove.classList.add("drove");
-});
