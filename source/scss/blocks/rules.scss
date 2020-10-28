@@ -31,6 +31,35 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  overflow: hidden;
+
+  span {
+    animation: character 0.2s ease-in backwards;
+    display: inline-block;
+
+    &:nth-child(3),
+    &:nth-child(6) {
+      animation-delay: 0.02s;
+    }
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      animation-delay: 0.04s;
+    }
+
+    &:first-child {
+      animation-delay: 0.06s;
+    }
+  }
+
+  @keyframes character {
+    0% {
+      transform: translateY(5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     margin-bottom: 50px;
@@ -59,6 +88,18 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation: rule 0.2s ease 0.2s backwards;
+
+  @keyframes rule {
+    0% {
+      transform: translateY(5rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -159,6 +200,23 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation: numbs 0.2s ease 0.4s backwards;
+
+    @keyframes numbs {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      80% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -177,8 +235,48 @@
     }
   }
 
+  &:nth-child(2) {
+    &::before {
+      animation-delay: 0.6s;
+    }
+
+    p {
+      animation-delay: 0.7s;
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      animation-delay: 0.9s;
+    }
+
+    p {
+      animation-delay: 1.1s;
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      animation-delay: 1.2s;
+    }
+
+    p {
+      animation-delay: 1.5s;
+    }
+  }
   p {
     margin: 0;
+    animation: rulesText 0.3s ease 0.5s backwards;
+
+    @keyframes rulesText {
+      0% {
+        transform: translateX(10px);
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -190,6 +288,7 @@
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+  display: none;
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -209,5 +308,38 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+}
+
+.rules__link.drove {
+  display: block;
+  span {
+    animation: btnRules 0.2s linear 0.3s backwards;
+
+    @keyframes btnRules {
+      0%{
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  &::before {
+    display: block;
+    left: auto;
+    right: 0;
+    transform: translate(0, -50%);
+    animation: btnBefore 0.3s linear backwards;
+
+    @keyframes btnBefore {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
   }
 }

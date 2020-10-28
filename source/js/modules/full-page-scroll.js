@@ -53,7 +53,20 @@ export default class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+    this.animatedRules();
   }
+  animatedRules() {
+    let active = document.getElementsByClassName('js-rules-screen')[0];
+    const drove = document.getElementsByClassName("js-rules-link")[0];
+    const animated = document.querySelector('.js-rules-item');
+    if (active.classList.contains('active')) {
+            animated.addEventListener('animationend', () => {
+                drove.classList.add("drove");
+            });
+    } else {
+        drove.classList.remove("drove");
+    }
+}
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
