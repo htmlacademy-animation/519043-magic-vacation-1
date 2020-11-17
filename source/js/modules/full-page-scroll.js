@@ -66,7 +66,7 @@ export default class FullPageScroll {
     } else {
         drove.classList.remove("drove");
     }
-}
+  }
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
