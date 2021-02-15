@@ -33,34 +33,6 @@
   letter-spacing: -0.04em;
   overflow: hidden;
 
-  span {
-    animation: character 0.2s ease-in backwards;
-    display: inline-block;
-
-    &:nth-child(3),
-    &:nth-child(6) {
-      animation-delay: 0.02s;
-    }
-
-    &:nth-child(2),
-    &:nth-child(5) {
-      animation-delay: 0.04s;
-    }
-
-    &:first-child {
-      animation-delay: 0.06s;
-    }
-  }
-
-  @keyframes character {
-    0% {
-      transform: translateY(5rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   @media (min-width: $stop-scaling) {
     margin-bottom: 50px;
     font-size: 48px;

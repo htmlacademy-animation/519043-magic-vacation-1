@@ -42,13 +42,15 @@
     border: 0;
     border-radius: 3rem;
     outline: none;
-    animation: fadeinForm 0.7s;
+    animation: fadeinForm 700ms ease 2s backwards;
     @keyframes fadeinForm {
         from {
             width: 0;
+            padding: 0;
         }
         to {
             width: calc(100% - 21rem);
+            padding: 0 5.6rem;
         }
     }
     &:focus {
@@ -84,6 +86,17 @@
 .form__button {
     width: 245px;
     flex: none;
+    animation: fadeInBtnForm 700ms ease 2s backwards;
+
+    @keyframes fadeInBtnForm {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     @media (orientation: portrait) {
         position: relative;
         flex: none;

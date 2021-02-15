@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import {AccentTypographyBuild} from './animations.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -54,7 +55,43 @@ export default class FullPageScroll {
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
     this.animatedRules();
+    this.fadeInHistory();
+    this.fadeInPrizes();
+    this.fadeInRules();
+    this.fadeInGame();
   }
+
+  fadeInHistory() {
+    const animationHistory = new AccentTypographyBuild(`.js-history`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationHistory.runAnimation();
+    }, 100)
+    document.querySelector('.js-history').classList.remove('active');
+  }
+
+  fadeInPrizes() {
+    const animationPrizes = new AccentTypographyBuild(`.js-prizes`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationPrizes.runAnimation();
+    }, 100)
+    document.querySelector('.js-prizes').classList.remove('active');
+  }
+
+  fadeInRules() {
+    const animationRules = new AccentTypographyBuild(`.js-rules`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationRules.runAnimation();
+    }, 100)
+    document.querySelector('.js-rules').classList.remove('active');
+  }
+  fadeInGame() {
+    const animationGame = new AccentTypographyBuild(`.js-game`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationGame.runAnimation();
+    }, 100)
+    document.querySelector('.js-game').classList.remove('active');
+  }
+
   animatedRules() {
     let active = document.getElementsByClassName('js-rules-screen')[0];
     const drove = document.getElementsByClassName("js-rules-link")[0];
