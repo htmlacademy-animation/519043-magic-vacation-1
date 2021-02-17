@@ -268,3 +268,136 @@
     }
   }
 }
+
+.result__images {
+
+  img {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .suitcase {
+    width: 440px;
+    left: 50%;
+    bottom: 17%;
+    z-index: 2;
+    animation: fadeInSuitcase 0.5s linear;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeInSuitcase {
+        0% {
+            width: 50px;
+            transform: translate3d(0, 15rem, 0);
+        }
+        100% {
+            width: 440px;
+            transform: translate3d(-25rem, 0, 0);
+        }
+    }
+  }
+
+  .flamingo {
+    width: 350px;
+    left: 28%;
+    bottom: 16%;
+    z-index: 3;
+    animation: fadeInFlamingo 0.5s linear 0.3s backwards, levitationFlamingo 1.5s ease-in-out 0.8s infinite;
+
+      @keyframes fadeInFlamingo {
+          0% {
+              opacity: 0;
+              transform: translate3d(0, 15rem, 0) rotate3d(1, 1, 1, -30deg);
+          }
+          100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, -3deg);
+          }
+      }
+
+      @keyframes levitationFlamingo {
+          0% {
+              transform: translate3d(0, 2rem, 0) rotate3d(1, 1, 1, -3deg);
+          }
+          50% {
+              transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0);
+          }
+          100% {
+              transform: translate3d(0, 2rem, 0) rotate3d(1, 1, 1, -3deg);
+          }
+      }
+  }
+
+  .leaf-green {
+    width: 400px;
+    right: 24%;
+    bottom: 24%;
+    z-index: 1;
+    animation: fadeInLeafBlue 1.5s linear 1s;
+    animation-fill-mode: backwards;
+    transform-origin: 0px 50%;
+  }
+
+  .leaf-blue-1 {
+    width: 370px;
+    right: 24%;
+    bottom: 27%;
+    animation: fadeInLeafBlue 1.5s linear 0.6s;
+    animation-fill-mode: backwards;
+    transform-origin: 0px 50%;
+
+    @keyframes fadeInLeafBlue {
+        0% {
+            opacity: 0;
+            transform: rotate3d(1, 1, 1, -20deg);
+        }
+        20% {
+            opacity: 1;
+            transform: rotate3d(1, 1, 1, 20deg);
+        }
+        40% {
+            transform: rotate3d(1, 1, 1, -10deg);
+        }
+        60% {
+            transform: rotate3d(1, 1, 1, 10deg);
+        }
+        80% {
+            transform: rotate3d(1, 1, 1, -5deg);
+        }
+        100% {
+            transform: rotate3d(1, 1, 1, 0);
+        }
+    }
+  }
+
+  .leaf-blue-2 {
+    width: 360px;
+    left: 19%;
+    bottom: 17%;
+    animation: fadeInLeafBlue2 1.5s linear 0.6s;
+    animation-fill-mode: backwards;
+    transform-origin: 100% 50%;
+
+    @keyframes fadeInLeafBlue2 {
+        0% {
+            opacity: 0;
+            transform: rotate3d(1, 1, 1, 20deg);
+        }
+        20% {
+            opacity: 1;
+            transform: rotate3d(1, 1, 1, -20deg);
+        }
+        40% {
+            transform: rotate3d(1, 1, 1, 10deg);
+        }
+        60% {
+            transform: rotate3d(1, 1, 1, -10deg);
+        }
+        80% {
+            transform: rotate3d(1, 1, 1, 5deg);
+        }
+        100% {
+            transform: rotate3d(1, 1, 1, 0);
+        }
+    }
+  }
+}
